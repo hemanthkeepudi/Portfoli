@@ -45,6 +45,9 @@ header a {
 header a:hover {
   color: #66fcf1;
 }
+header .name:hover {
+  color: #66fcf1;
+}
 
 header .name {
   font-size: clamp(1rem, 3vw, 1.5rem);
@@ -290,13 +293,16 @@ input[type="text"] {
   text-align: center;
   z-index: 3;
 }
-
+.content p{
+  color:#ffffff;
+}
 /* Timeline for Education */
 .content h2 {
   color: #66fcf1;
   margin-bottom: clamp(0.5rem, 2vw, 1rem);
   text-align: center;
   font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .timeline {
