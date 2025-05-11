@@ -456,6 +456,353 @@ input[type="text"] {
   display: block;
 }
 
+/* Existing card flip styles with individual skill boxes */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30vw, 300px), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1rem, 3vw, 2rem);
+  justify-items: center;
+  max-width: clamp(280px, 95%, 1200px);
+  margin: 0 auto;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+  height: clamp(240px, 50vw, 300px);
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.project-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #1f2833;
+  border: 1px solid #45a29e;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #45a29e;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-sizing: border-box;
+}
+
+.project-card-front {
+  z-index: 2;
+}
+
+.project-card-back {
+  transform: rotateY(180deg);
+  color: #f8f8f2;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  text-align: center;
+  justify-content: space-between;
+}
+
+.project-card-front h3 {
+  color: #66fcf1;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.project-card-back p {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Skills Container and Individual Skill Boxes */
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+  max-width: 90%;
+}
+
+.skill-box {
+  padding: clamp(0.2rem, 0.8vw, 0.4rem) clamp(0.4rem, 1.2vw, 0.6rem);
+  background: #1f2833;
+  border: 1px solid #45a29e;
+  border-radius: 4px;
+  color: #66fcf1;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+  text-align: center;
+  box-shadow: 0 0 6px #45a29e;
+}
+
+/* View Project Button */
+.view-project-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
+  background: transparent;
+  border: 1px solid #66fcf1;
+  border-radius: 4px;
+  color: #66fcf1;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: clamp(0.3rem, 1vw, 0.5rem);
+}
+
+.view-project-btn:hover {
+  background: #66fcf1;
+  color: #1f2833;
+  box-shadow: 0 0 10px #45a29e;
+}
+
+.view-project-icon {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.view-project-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #f8f8f2;
+  color: #f8f8f2;
+}
+
+.view-project-btn.disabled:hover {
+  background: transparent;
+  color: #f8f8f2;
+  box-shadow: none;
+}
+
+/* Contact Section */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 3vw, 2rem);
+  max-width: clamp(280px, 95%, 600px);
+  margin: 0 auto;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
+  background: transparent;
+  border: 1px solid #45a29e;
+  border-radius: 6px;
+  color: #66fcf1;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  box-shadow: 0 0 8px #45a29e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  background: #66fcf1;
+  color: #1f2833;
+  box-shadow: 0 0 15px #45a29e;
+}
+
+.contact-logo {
+  width: clamp(20px, 5vw, 24px);
+  height: clamp(20px, 5vw, 24px);
+  object-fit: contain;
+  border: 1px solid #45a29e;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #45a29e;
+}
+
+/* Specific button styles for visual distinction */
+.linkedin-btn:hover {
+  box-shadow: 0 0 20px #45a29e;
+}
+
+.github-btn:hover {
+  box-shadow: 0 0 20px #f8f8f2;
+}
+
+/* Email Line */
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  margin: clamp(0.5rem, 2vw, 1rem) auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #f8f8f2;
+  text-align: center;
+}
+
+.contact-email a {
+  color: #f8f8f2;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-email a:hover {
+  color: #66fcf1;
+  text-shadow: 0 0 8px #45a29e;
+}
+
+.contact-icon {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+/* Pulse animation for idle state */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px #45a29e;
+  }
+  50% {
+    box-shadow: 0 0 12px #45a29e;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+    padding: clamp(0.8rem, 2vw, 1.5rem);
+  }
+
+  .contact-btn {
+    width: clamp(200px, 80%, 300px);
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+    padding: clamp(0.4rem, 1.2vw, 0.6rem) clamp(0.8rem, 2vw, 1.2rem);
+  }
+
+  .contact-logo {
+    width: clamp(18px, 4.5vw, 22px);
+    height: clamp(18px, 4.5vw, 22px);
+  }
+
+  .contact-email {
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  }
+
+  .contact-icon {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .contact-btn {
+    width: clamp(180px, 90%, 250px);
+    font-size: clamp(0.6rem, 1.6vw, 0.8rem);
+    padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.6rem, 1.8vw, 1rem);
+  }
+
+  .contact-logo {
+    width: clamp(16px, 4vw, 20px);
+    height: clamp(16px, 4vw, 20px);
+  }
+
+  .contact-email {
+    font-size: clamp(0.6rem, 1.6vw, 0.8rem);
+  }
+
+  .contact-icon {
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: clamp(0.8rem, 2vw, 1.5rem);
+  }
+
+  .project-card {
+    height: clamp(220px, 60vw, 280px);
+  }
+
+  .project-card-back {
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+  }
+
+  .skill-box {
+    font-size: clamp(0.5rem, 1.6vw, 0.7rem);
+    padding: clamp(0.15rem, 0.6vw, 0.3rem) clamp(0.3rem, 1vw, 0.5rem);
+  }
+
+  .view-project-btn {
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    padding: clamp(0.3rem, 1.2vw, 0.5rem) clamp(0.6rem, 1.8vw, 0.8rem);
+  }
+
+  .view-project-icon {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .project-card {
+    height: clamp(200px, 70vw, 260px);
+  }
+
+  .project-card-front h3 {
+    font-size: clamp(1rem, 2.8vw, 1.3rem);
+  }
+
+  .project-card-back {
+    font-size: clamp(0.6rem, 1.6vw, 0.7rem);
+  }
+
+  .skill-box {
+    font-size: clamp(0.5rem, 1.5vw, 0.6rem);
+    padding: clamp(0.1rem, 0.5vw, 0.2rem) clamp(0.2rem, 0.8vw, 0.4rem);
+  }
+
+  .view-project-btn {
+    font-size: clamp(0.5rem, 1.6vw, 0.7rem);
+    padding: clamp(0.2rem, 1vw, 0.4rem) clamp(0.5rem, 1.5vw, 0.7rem);
+  }
+
+  .view-project-icon {
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+  }
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -470,6 +817,8 @@ footer {
   z-index: 2;
   font-family: 'Segoe UI', sans-serif;
 }
+
+
 
 .footer-nav a {
   color: white;
@@ -671,6 +1020,6 @@ footer p {
   }
 
   footer p {
-    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    font-size: clamp(0.5rem, 1.6vw, 1rem);
   }
 }
