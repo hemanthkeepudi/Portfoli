@@ -16,8 +16,8 @@
       <nav>
         <a href="#about">About</a>
         <a href="#stats">Stats</a>
-        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -136,10 +136,7 @@
             <div class="skill-icon" data-tooltip="CSS: 4 years experience">
               <img src="images\CSS.png" alt="CSS" />
             </div>
-            <div
-              class="skill-icon"
-              data-tooltip="JavaScript: 4 years experience"
-            >
+            <div class="skill-icon"data-tooltip="JavaScript: 4 years experience">
               <img src="images\JS.png" alt="JavaScript" />
             </div>
             <div class="skill-icon" data-tooltip="React: 3 years experience">
@@ -159,32 +156,102 @@
 
         <section id="projects">
           <h2>Projects</h2>
-          <p>
-            - <strong>Portfolio Website</strong>: A dynamic portfolio with 3D
-            background using Three.js<br />
-            - <strong>AI Chatbot</strong>: A conversational AI integrated into
-            this site<br />
-            - More projects coming soon!
-          </p>
+          <div class="projects-container">
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h3>Portfolio Website</h3>
+                </div>
+                <div class="project-card-back">
+                  <p>
+                    This very website! Built with HTML, CSS, and JavaScript to showcase my work.
+                  </p>
+                  <div class="project-skills">
+                    <span class="skill-box">HTML</span>
+                    <span class="skill-box">CSS</span>
+                    <span class="skill-box">JavaScript</span>
+                    <span class="skill-box">React</span>
+                  </div>
+                  <a
+                  href="https://github.com/hemanthkeepudi/Portfoli"
+                  target="_blank"
+                  class="view-project-btn"
+                  >
+                  <span class="view-project-icon">🔗</span> View Project
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-card-inner">
+              <div class="project-card-front">
+                <h3>To Do Application</h3>
+              </div>
+              <div class="project-card-back">
+                <p>
+                  A Server Side application built with java to help users manage tasks efficiently.
+                </p>
+                <div class="project-skills">
+                  <span class="skill-box">Java</span>
+                  <span class="skill-box">Bootstrap</span>
+                  <span class="skill-box">HTML</span>
+                </div>
+                <a
+                    href="https://github.com/hemanthkeepudi/todoapplication"
+                    target="_blank"
+                    class="view-project-btn"
+                  >
+                    <span class="view-project-icon">🔗</span> View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h3>More Projects</h3>
+                </div>
+                <div class="project-card-back">
+                  <p>
+                    Exciting projects are in development. Stay tuned for
+                    updates!
+                  </p>
+                  <div class="project-skills">
+                    <span class="skill-box">TBD</span>
+                  </div>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="view-project-btn disabled"
+                    aria-disabled="true"
+                  >
+                    <span class="view-project-icon">🔗</span> View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="contact">
           <h2>Contact</h2>
-          <p>
-            Email: your.email@example.com<br />
-            LinkedIn: linkedin.com/in/yourprofile<br />
-            GitHub: github.com/yourusername
+          <p class="contact-email">
+            <span class="contact-icon">✉️</span>
+              <a href="mailto:keepudihemanth6329@example.com">your.email@example.com</a>
           </p>
+          <div class="contact-buttons">
+            <a href="https://www.linkedin.com/in/hemanth-keepudi/" target="_blank" rel="noopener noreferrer" class="contact-btn linkedin-btn">
+            <img src="images\linkedin.webp" alt="LinkedIn Logo" class="contact-logo">LinkedIn</a>
+            <a href="https://github.com/hemanthkeepudi" target="_blank" rel="noopener noreferrer" class="contact-btn github-btn">
+            <img src="images\Git.webp" alt="GitHub Logo" class="contact-logo">GitHub</a>
+          </div>
         </section>
-      </div>
-    </div>
-
+  
     <footer>
       <p>© 2025 . All rights reserved.</p>
       <div class="footer-nav">
         <nav>
           <a href="#">Home</a>
-          <a href="#skills">Skills</a>
         </nav>
       </div>
     </footer>
