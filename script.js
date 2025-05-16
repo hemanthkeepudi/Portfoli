@@ -83,7 +83,8 @@ function processCommand() {
             reply = "Coding Side Projects, Competitive Programming, Reading Research Papers, Web Development.";
             break;
         case "open resume":
-            reply = "You can download the resume here: <a href='#' class='resume-link'>[Download Resume]</a>";
+            window.open("Resume_Hemanth.pdf", "_blank"); 
+            reply = "Opening resume...";
             break;
         case "contact":
             reply = `
